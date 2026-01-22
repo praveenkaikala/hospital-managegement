@@ -1,9 +1,6 @@
 package com.example.hospitalManagement.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -17,9 +14,15 @@ public class Bill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private long patientId;
+
+    @ManyToOne
+    @JoinColumn(name = "appointmentId",nullable = false)
+    Appointment appointment;
     private double amount;
     private String status;
 
 
+    public void setStatus(String status) {
+        this.status=status;
+    }
 }
