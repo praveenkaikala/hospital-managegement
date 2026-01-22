@@ -17,11 +17,11 @@ public class Appointment {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "patientId",nullable = false)
+    @JoinColumn(name = "patient_id",nullable = false)
     private Patient patient;
 
     @ManyToOne
-    @JoinColumn(name="doctorId",nullable = false)
+    @JoinColumn(name="doctor_id",nullable = false)
     private Doctor doctor;
 
     private String date;

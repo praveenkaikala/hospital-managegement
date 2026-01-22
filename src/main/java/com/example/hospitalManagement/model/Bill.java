@@ -16,10 +16,13 @@ public class Bill {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "patientId",nullable = false)
-    Patient patient;
+    @JoinColumn(name = "appointmentId",nullable = false)
+    Appointment appointment;
     private double amount;
     private String status;
 
 
+    public void setStatus(String status) {
+        this.status=status;
+    }
 }
